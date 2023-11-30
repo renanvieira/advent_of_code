@@ -31,3 +31,24 @@ if __name__ == "__main__":
         local_arr.clear()
 
     main(input_array)
+
+
+
+def test_main():
+    input_array = []
+    local_arr = []
+    last_line = None
+    with open("input.txt", "rb") as f:
+        for line in f:
+            decoded_line = line.strip().decode("utf-8")
+            if decoded_line:
+                local_arr.append(int(decoded_line))
+            else:
+                input_array.append(local_arr)
+                local_arr = []
+
+    if local_arr:
+        input_array.append(local_arr[:])
+        local_arr.clear()
+
+    main(input_array)

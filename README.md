@@ -1,2 +1,13 @@
-# Advent Of Code 2022
+# Advent Of Code
 Pratice algorithms and programming language with code challanges.
+
+
+
+## 2022
+
+- [Python](2022/Python)
+- [Typescript](2022/TypeScript)
+
+
+## 2023
+- [Ocaml](2023/Ocaml)
