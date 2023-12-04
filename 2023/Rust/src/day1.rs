@@ -62,13 +62,11 @@ fn part2(input: Vec<&str>) -> u32 {
         stack.sort_by(|a, b| a.0.cmp(&b.0));
         println!("Stack: {:?}", stack);
 
-        let first_match = stack.first()
-            .expect("Line should have first number");
-        let last_match = stack.last()
-            .expect("Line should have last number");
+        let first_match = stack.first().expect("Line should have first number");
+        let last_match = stack.last().expect("Line should have last number");
 
         let first_num = first_match.1;
-        let last_num =last_match.1;
+        let last_num = last_match.1;
 
         // Transform to digits
 
@@ -99,9 +97,10 @@ mod tests {
     }
 }
 
-pub fn run(input: Vec<&str>) -> (u32, i32) {
-    let result1 = part2(input);
-    print!("Part 2: {}", result1);
+pub fn run(input: Vec<&str>) {
+    let result1 = part1(input.clone());
+    let result2 = part2(input.clone());
 
-    (result1, 0)
+    println!("Part 1: {}", result1);
+    println!("Part 2: {}", result2);
 }

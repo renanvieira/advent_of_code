@@ -1,12 +1,18 @@
 use std::{env, fs};
 
-
 mod day1;
+mod day2;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
-    
-    let content = fs::read_to_string(&args[1]).unwrap();
 
-    day1::run(content.lines().map(|l| l.as_ref()).collect());
+    let content: String = fs::read_to_string(&args[1]).unwrap();
+    let day = args[2].parse::<u32>().unwrap();
+
+    let input_lines = content.lines().map(|l| l.as_ref()).collect();
+    match day {
+        1 => day1::run(input_lines),
+        2 => day2::run(input_lines),
+        _ => todo!("Day {} not yet implemented", day),
+    };
 }
