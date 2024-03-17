@@ -10,4 +10,4 @@ Pratice algorithms and programming language with code challanges.
 
 
 ## 2023
-- [Ocaml](2023/Ocaml)
+- [Rust](2023/Rust)
