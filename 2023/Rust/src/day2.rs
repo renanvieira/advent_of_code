@@ -75,7 +75,7 @@ pub fn part1(input: Vec<&str>) -> i32 {
 
     let _result = parsed_games
         .iter()
-        .filter(|(game_number, cube_sets)| {
+        .filter(|(_, cube_sets)| {
             cube_sets.iter().all(|s| {
                 s.iter().any(|(cube, count)| match cube {
                     Cube::Red => count > &CUBE_RED_LIMIT,
@@ -95,7 +95,7 @@ pub fn part2(input: Vec<&str>) -> i32 {
 
     parsed_games
         .iter()
-        .map(|(game_number, cube_sets)| {
+        .map(|(_, cube_sets)| {
             let mut map = HashMap::new();
             for sets in cube_sets {
                 for (cube, count) in sets {
@@ -108,7 +108,7 @@ pub fn part2(input: Vec<&str>) -> i32 {
 
             map
         })
-        .map(|m| m.iter().fold(1, |acc, (cube, count)| acc * *count))
+        .map(|m| m.iter().fold(1, |acc, (_, count)| acc * *count))
         .sum::<i32>()
 }
 
@@ -142,5 +142,5 @@ pub(crate) fn run(input_lines: Vec<&str>) {
     let result2 = part2(input_lines.clone());
 
     println!("Part 1: {}", result1);
-    println!("Part 2: {}", result2);    
+    println!("Part 2: {}", result2);
 }
